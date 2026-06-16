@@ -139,8 +139,10 @@ esbuild.build({
     '@huggingface/transformers',
     'http',
     'url',
-    'smart-plugins-obsidian/utils.js',
   ],
+  alias: {
+    'smart-plugins-obsidian/utils.js': path.resolve(process.cwd(), 'src/utils/smart_plugins_obsidian_stub.js'),
+  },
   define: {
     'process.env.DEFAULT_OPEN_ROUTER_API_KEY': JSON.stringify(process.env.DEFAULT_OPEN_ROUTER_API_KEY),
   },
