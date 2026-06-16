@@ -11,7 +11,6 @@ async function build_html(scope_plugin) {
         <button class="sc-getting-started-button">Getting started guide</button>
         <button class="sc-report-bug-button">Report a bug</button>
         <button class="sc-request-feature-button">Request a feature</button>
-        <button class="sc-share-workflow-button">Share workflow ⭐</button>
       </div>
 
       <div data-connections-settings-container>
@@ -123,12 +122,6 @@ export async function post_process(scope_plugin, frag) {
     });
   }
 
-  /* supporter callout */
-  const supporter_callout = await scope_plugin.env.render_component(
-    'supporter_callout',
-    scope_plugin
-  );
-  frag.appendChild(supporter_callout);
 
   /* buttons */
   frag.querySelector('.sc-getting-started-button')?.addEventListener('click', () => {
@@ -141,21 +134,21 @@ export async function post_process(scope_plugin, frag) {
   frag.querySelector('.sc-report-bug-button')?.addEventListener('click', () => {
     open_url_externally(
       scope_plugin,
-      'https://github.com/brianpetro/obsidian-smart-connections/issues/new?template=bug_report.yml'
+      'https://github.com/wueestry/obsidian-smart-network/issues/new?template=bug_report.yml'
     );
   });
 
   frag.querySelector('.sc-request-feature-button')?.addEventListener('click', () => {
     open_url_externally(
       scope_plugin,
-      'https://github.com/brianpetro/obsidian-smart-connections/issues/new?template=feature_request.yml'
+      'https://github.com/wueestry/obsidian-smart-network/issues/new?template=feature_request.yml'
     );
   });
 
   frag.querySelector('.sc-share-workflow-button')?.addEventListener('click', () => {
     open_url_externally(
       scope_plugin,
-      'https://github.com/brianpetro/obsidian-smart-connections/discussions/new?category=showcase'
+      'https://github.com/wueestry/obsidian-smart-network/discussions/new?category=showcase'
     );
   });
 

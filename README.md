@@ -109,9 +109,7 @@ Watch this video to see Smart Connections and Smart Chat in action.
 > 
 > This time, the Obsidian community became a part of the process. From the beginning, Smart Connections users empowered me to realize the potential of user-aligned tools for thought. 
 > 
-> The earliest adopters, like Sarah, gave me critical feedback that improved the software and provided financial support that enabled me to focus on the project full-time. 
-> 
-> Matthew joined the community and started our Community Lean Coffee meetings, which have become an invaluable resource and introduced me to many more people that have given their time and resources to support my work.
+> The earliest adopters, like Sarah, gave me critical feedback that improved the software and provided financial support that enabled me to focus on the project full-time.
 > 
 > This experience made me realize how we can work together to empower each other with new ideas and user-aligned tools to thrive with AI.
 > 

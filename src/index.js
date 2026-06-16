@@ -208,7 +208,7 @@ export default class SmartConnectionsPlugin extends Plugin {
   async check_for_update() {
     try {
       const {json: response} = await requestUrl({
-        url: "https://api.github.com/repos/brianpetro/obsidian-smart-connections/releases/latest",
+        url: "https://api.github.com/repos/wueestry/obsidian-smart-network/releases/latest",
         method: "GET",
         headers: {
           "Content-Type": "application/json",
