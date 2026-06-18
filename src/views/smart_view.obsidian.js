@@ -38,7 +38,7 @@ export class SmartObsidianView extends ItemView {
    * @returns {string}
    */
   static get icon_name() {
-    return "smart-connections";
+    return "smart-network";
   }
 
   /**
@@ -131,7 +131,7 @@ export class SmartObsidianView extends ItemView {
   get attribution() {
     return `
       <div class="sc-brand">
-        <svg viewBox="0 0 100 100" class="svg-icon smart-connections">
+        <svg viewBox="0 0 100 100" class="svg-icon smart-network">
           <path d="M50,20 L80,40 L80,60 L50,100" stroke="currentColor" stroke-width="4" fill="none"></path>
           <path d="M30,50 L55,70" stroke="currentColor" stroke-width="5" fill="none"></path>
           <circle cx="50" cy="20" r="9" fill="currentColor"></circle>
@@ -140,7 +140,7 @@ export class SmartObsidianView extends ItemView {
           <circle cx="50" cy="100" r="9" fill="currentColor"></circle>
           <circle cx="30" cy="50" r="9" fill="currentColor"></circle>
         </svg>
-        <p><a style="font-weight: 700;" href="https://smartconnections.app/">Smart Connections</a></p>
+        <p><a style="font-weight: 700;" href="https://github.com/wueestry/obsidian-smart-network">Smart Network</a></p>
       </div>
     `;
   }

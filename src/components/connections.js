@@ -132,7 +132,7 @@ export async function post_process(entity, container, opts = {}) {
   /* Help */
   container.querySelector('[title="Help"]')?.addEventListener('click', () =>
     StoryModal.open(plugin, {
-      title: 'Getting Started With Smart Connections',
+      title: 'Getting Started With Smart Network',
       url: 'https://smartconnections.app/story/smart-connections-getting-started/?utm_source=connections-view-help#page=understanding-connections-1'
     })
   );
@@ -145,7 +145,7 @@ export async function post_process(entity, container, opts = {}) {
       modal.open();
     } else {
       await app.setting.open();
-      await app.setting.openTabById('smart-connections');
+      await app.setting.openTabById('smart-network');
     }
   });
 

@@ -5,7 +5,7 @@ export class ScSettingsTab extends PluginSettingTab {
   constructor(app, plugin) {
     super(app, plugin);
     /**
-     * @property {SmartConnectionsPlugin} plugin - Plugin instance
+     * @property {SmartNetworkPlugin} plugin - Plugin instance
      */
     this.plugin = plugin;
     /**

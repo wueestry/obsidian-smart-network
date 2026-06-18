@@ -2,9 +2,9 @@ import { SmartObsidianView } from './smart_view.obsidian.js';
 import { Platform } from 'obsidian';
 
 export class ConnectionsView extends SmartObsidianView {
-  static get view_type() { return 'smart-connections-view'; }
+  static get view_type() { return 'smart-network-view'; }
   static get display_text() { return 'Connections'; }
-  static get icon_name() { return 'smart-connections'; }
+  static get icon_name() { return 'smart-network'; }
 
   register_plugin_events() {
     this.plugin.registerEvent(

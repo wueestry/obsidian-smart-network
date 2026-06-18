@@ -121,7 +121,7 @@ export async function post_process(result_scope, frag, opts = {}) {
       const linktext_path = key.replace(/#$/, ''); // remove trailing hash if present
       app.workspace.trigger('hover-link', {
         event,
-        source: 'smart-connections-view',
+        source: 'smart-network-view',
         hoverParent: result_elm.parentElement,
         targetEl: result_elm,
         linktext: linktext_path

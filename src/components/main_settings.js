@@ -4,10 +4,10 @@ import { toggle_plugin_ribbon_icon } from "../utils/toggle_plugin_ribbon_icon.js
 
 async function build_html(scope_plugin) {
   return `
-    <div id="smart-connections-settings">
+    <div id="smart-network-settings">
       <div data-user-agreement></div>
 
-      <div id="smart-connections-getting-started-container">
+      <div id="smart-network-getting-started-container">
         <button class="sc-getting-started-button">Getting started guide</button>
         <button class="sc-report-bug-button">Report a bug</button>
         <button class="sc-request-feature-button">Request a feature</button>
@@ -22,12 +22,6 @@ async function build_html(scope_plugin) {
       </div>
 
       <div data-smart-settings="env"></div>
-      <h2>More Smart Plugins</h2>
-      <div class="sc-other-plugins">
-        <button class="sc-smart-context-button">Quickly copy notes many notes to clipboard</button>
-        <button class="sc-smart-chatgpt-button">Embed &amp; bookmark chat threads to notes</button>
-        <button class="sc-smart-templates-button">Smart note generation with context + templates</button>
-      </div>
     </div>
   `;
 }
@@ -126,7 +120,7 @@ export async function post_process(scope_plugin, frag) {
   /* buttons */
   frag.querySelector('.sc-getting-started-button')?.addEventListener('click', () => {
     StoryModal.open(scope_plugin, {
-      title: 'Getting Started With Smart Connections',
+      title: 'Getting Started With Smart Network',
       url: 'https://smartconnections.app/story/smart-connections-getting-started/?utm_source=sc-op-settings'
     });
   });
@@ -150,18 +144,6 @@ export async function post_process(scope_plugin, frag) {
       scope_plugin,
       'https://github.com/wueestry/obsidian-smart-network/discussions/new?category=showcase'
     );
-  });
-
-  frag.querySelector('.sc-smart-context-button')?.addEventListener('click', () => {
-    open_url_externally(scope_plugin, 'https://obsidian.md/plugins?id=smart-context');
-  });
-
-  frag.querySelector('.sc-smart-chatgpt-button')?.addEventListener('click', () => {
-    open_url_externally(scope_plugin, 'https://obsidian.md/plugins?id=smart-chatgpt');
-  });
-
-  frag.querySelector('.sc-smart-templates-button')?.addEventListener('click', () => {
-    open_url_externally(scope_plugin, 'https://obsidian.md/plugins?id=smart-templates');
   });
 
   return frag;

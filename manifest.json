@@ -1,10 +1,10 @@
 {
-  "id": "smart-connections",
-  "name": "Smart Connections",
-  "author": "Brian Petro",
+  "id": "smart-network",
+  "name": "Smart Network",
+  "author": "Ryan Wüest",
   "description": "Chat with your notes & see links to related content with Local or Remote models.",
   "minAppVersion": "1.1.0",
-  "authorUrl": "https://wfhbrian.com",
+  "authorUrl": "https://github.com/wueestry",
   "isDesktopOnly": false,
-  "version": "3.0.81"
+  "version": "3.0.82"
 }

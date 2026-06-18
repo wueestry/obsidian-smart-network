@@ -1,4 +1,13 @@
 import { addIcon } from 'obsidian';
+export function add_smart_network_icon() {
+    addIcon("smart-network", `<path d="M50,20 L80,40 L80,60 L50,100" stroke="currentColor" stroke-width="4" fill="none"/>
+    <path d="M30,50 L55,70" stroke="currentColor" stroke-width="5" fill="none"/>
+    <circle cx="50" cy="20" r="9" fill="currentColor"/>
+    <circle cx="80" cy="40" r="9" fill="currentColor"/>
+    <circle cx="80" cy="70" r="9" fill="currentColor"/>
+    <circle cx="50" cy="100" r="9" fill="currentColor"/>
+    <circle cx="30" cy="50" r="9" fill="currentColor"/>`);
+}
 export function add_smart_dice_icon() {
     addIcon("smart-dice", `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <rect x="1" y="1" width="22" height="22" rx="2" fill="none"/>

@@ -50,7 +50,7 @@ export class ReleaseNotesView extends ItemView {
   }
   get version() {
     const version = this.leaf.viewState?.state?.version ??
-      this.app.plugins.getPlugin('smart-connections')?.manifest.version ?? '';
+      this.app.plugins.getPlugin('smart-network')?.manifest.version ?? '';
     return version;
   }
 

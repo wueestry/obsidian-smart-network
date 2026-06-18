@@ -34,12 +34,12 @@ import { ReleaseNotesView }    from "./views/release_notes_view.js";
 import { StoryModal } from 'obsidian-smart-env/modals/story.js';
 import { create_deep_proxy } from "./utils/create_deep_proxy.js";
 import { get_random_connection } from "./utils/get_random_connection.js";
-import { add_smart_dice_icon } from "./utils/add_icons.js";
+import { add_smart_network_icon, add_smart_dice_icon } from "./utils/add_icons.js";
 import { toggle_plugin_ribbon_icon } from "./utils/toggle_plugin_ribbon_icon.js";
 import { determine_installed_at } from "./utils/determine_installed_at.js";
 import { build_connections_codeblock } from "./utils/build_connections_codeblock.js";
 
-export default class SmartConnectionsPlugin extends Plugin {
+export default class SmartNetworkPlugin extends Plugin {
 
   get item_views() {
     return {
@@ -100,7 +100,7 @@ export default class SmartConnectionsPlugin extends Plugin {
   async initialize() {
     await this.load_new_user_state();
     // SmartSettings.create_sync(this);
-    this.smart_connections_view = null;
+    this.smart_network_view = null;
 
     // if(!Platform.isMobile){
     //   // Register protocol handler for obsidian://sc-op/callback
@@ -108,11 +108,11 @@ export default class SmartConnectionsPlugin extends Plugin {
     //     await this.handle_sc_op_oauth_callback(params);
     //   });
     // }
-    console.log("Smart Connections v3 loaded");
+    console.log("Smart Network v3 loaded");
     if(this.is_new_user()) {
       setTimeout(() => {
         StoryModal.open(this, {
-          title: 'Getting Started With Smart Connections',
+          title: 'Getting Started With Smart Network',
           url: 'https://smartconnections.app/story/smart-connections-getting-started/?utm_source=sc-op-new-user',
         });
       }, 1000);
@@ -133,6 +133,7 @@ export default class SmartConnectionsPlugin extends Plugin {
    * Initialize ribbon icons based on saved settings.
    */
   add_ribbon_icons() {
+    add_smart_network_icon();
     add_smart_dice_icon();
     toggle_plugin_ribbon_icon(this, 'connections');
     toggle_plugin_ribbon_icon(this, 'random_note');
@@ -140,19 +141,19 @@ export default class SmartConnectionsPlugin extends Plugin {
 
   ribbon_icons = {
     connections: {
-      icon_name: "smart-connections",
-      description: "Smart Connections: Open connections view",
+      icon_name: "smart-network",
+      description: "Smart Network: Open connections view",
       callback: () => { this.open_connections_view(); }
     },
     random_note: {
       icon_name: "smart-dice",
-      description: "Smart Connections: Open random connection",
+      description: "Smart Network: Open random connection",
       callback: () => { this.open_random_connection(); }
     }
   }
 
   register_code_blocks() {
-    this.register_code_block("smart-connections", "render_code_block");
+    this.register_code_block("smart-network", "render_code_block");
   }
   register_code_block(name, callback_name) {
     try{
@@ -239,7 +240,7 @@ export default class SmartConnectionsPlugin extends Plugin {
 
   add_commands() {
     this.addCommand({
-      id: "smart-connections-random",
+      id: "smart-network-random",
       name: "Open: Random note from connections",
       callback: async () => {
         await this.open_random_connection();
@@ -269,7 +270,7 @@ export default class SmartConnectionsPlugin extends Plugin {
       name: 'Show getting started slideshow',
       callback: () => {
         StoryModal.open(this, {
-          title: 'Getting Started With Smart Connections',
+          title: 'Getting Started With Smart Network',
           url: 'https://smartconnections.app/story/smart-connections-getting-started/?utm_source=sc-op-command',
         });
       }
@@ -353,7 +354,7 @@ export default class SmartConnectionsPlugin extends Plugin {
   }
 
 
-  get plugin_is_enabled() { return this.app?.plugins?.enabledPlugins?.has("smart-connections"); }
+  get plugin_is_enabled() { return this.app?.plugins?.enabledPlugins?.has("smart-network"); }
 
   // DEPRECATED
   /**
@@ -400,7 +401,7 @@ export default class SmartConnectionsPlugin extends Plugin {
   }
 
   migrate_installed_at_from_localStorage() {
-    const localStorageKey = 'smart_connections_new_user';
+    const localStorageKey = 'smart_network_new_user';
     if (typeof localStorage !== 'undefined' && localStorage.getItem(localStorageKey) !== null) {
       const oldValue = localStorage.getItem(localStorageKey) !== 'false';
       if (!oldValue) {
@@ -432,7 +433,7 @@ export default class SmartConnectionsPlugin extends Plugin {
    * MIGRATION: Move last_version from localStorage to plugin data.
    */
   async migrate_last_version_from_localStorage() {
-    const localStorageKey = 'smart_connections_last_version';
+    const localStorageKey = 'smart_network_last_version';
     if (typeof localStorage !== 'undefined' && localStorage.getItem(localStorageKey)) {
       const version = localStorage.getItem(localStorageKey);
       await this.set_last_known_version(version);

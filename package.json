@@ -1,8 +1,8 @@
 {
-  "name": "obsidian-smart-connections",
-  "version": "3.0.81",
+  "name": "obsidian-smart-network",
+  "version": "3.0.82",
   "type": "module",
-  "description": "Link and chat with your notes using ChatGPT and embedding artificial intelligence from OpenAI.",
+  "description": "Chat with your notes & see links to related content with Local or Remote models.",
   "scripts": {
     "build": "node esbuild.js",
     "release": "node release.js",
@@ -24,7 +24,7 @@
   "author": "🌴 Brian (Brian Petro)",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/brianpetro/obsidian-smart-connections/issues"
+    "url": "https://github.com/wueestry/obsidian-smart-network/issues"
   },
   "homepage": "https://smartconnections.app",
   "devDependencies": {

@@ -115,7 +115,7 @@ export async function post_process(view, frag, opts = {}) {
   const help_button = frag.querySelector("[title='Help']");
   help_button?.addEventListener("click", () => {
     StoryModal.open(view.plugin, {
-      title: 'Getting Started With Smart Connections',
+      title: 'Getting Started With Smart Network',
       url: 'https://smartconnections.app/story/smart-connections-getting-started/?utm_source=connections-view-help',
     });
   });

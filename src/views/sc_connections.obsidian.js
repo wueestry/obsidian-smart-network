@@ -6,9 +6,9 @@ import { SmartNoteInspectModal } from "obsidian-smart-env/views/source_inspector
  * @deprecated Use `ConnectionsView` instead.
  */
 export class ScConnectionsView extends SmartObsidianView {
-  static get view_type() { return "smart-connections-view"; }
-  static get display_text() { return "Smart Connections"; }
-  static get icon_name() { return "smart-connections"; }
+  static get view_type() { return "smart-network-view"; }
+  static get display_text() { return "Smart Network"; }
+  static get icon_name() { return "smart-network"; }
   main_component_key = "connections";
 
 
@@ -173,7 +173,7 @@ export class ScConnectionsView extends SmartObsidianView {
   async open_settings() {
     // console.log('Smart Connections: Opening settings');
     await this.app.setting.open();
-    await this.app.setting.openTabById('smart-connections');
+    await this.app.setting.openTabById('smart-network');
   }
 
 }
